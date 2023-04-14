@@ -7,19 +7,19 @@ sequelize db:create
 sequelize model:generate --name roles --attributes 'role_name:string'
 
 # crear modelo Usuario
-sequelize model:generate --name usuario --attributes 'usuario:string,numero:integer'
+sequelize model:generate --name Usuario --attributes 'nombre:string,apellidos:string,id_roles:integer,email:string,telefono:integer,password:string'
 
 # crear modelo Doctors
 sequelize model:generate --name Doctors --attributes 'id_users:integer'
 
 # crear modelo Patience
-sequelize model:generate --name Patientes --attributes 'id_users:integer'
+sequelize model:generate --name Patients --attributes 'id_users:integer'
 
 # crear modelo Paciente
 sequelize model:generate --name Alumno --attributes 'nombre:string,apellidos:string,edad:integer,fecha_nacimiento:date,activo:enum:{si,no},id_nacionalidad:integer,id_direccion:integer'
 
 # crear modelo Curso
-sequelize model:generate --name Curso --attributes 'nombre_curso:string,id_categoria:integer'
+sequelize model:generate --name Appointments --attributes 'id_patients:integer,id_doctors:integer,time:time,date:date'
 
 ###########################################################
 
