@@ -3,14 +3,14 @@
 # crear base de datos
 sequelize db:create
 
-# crear modelo Nacionalidad
+# crear modelo Roles
 sequelize model:generate --name roles --attributes 'role_name:string'
 
-# crear modelo Direccion
-sequelize model:generate --name Direccion --attributes 'calle:string,numero:integer'
+# crear modelo Usuario
+sequelize model:generate --name usuario --attributes 'usuario:string,numero:integer'
 
 # crear modelo Categoria
-sequelize model:generate --name Categoria --attributes 'nombre_categoria:string'
+sequelize model:generate --name doctor --attributes 'nombre_categoria:string'
 
 # crear modelo Alumno
 sequelize model:generate --name Alumno --attributes 'nombre:string,apellidos:string,edad:integer,fecha_nacimiento:date,activo:enum:{si,no},id_nacionalidad:integer,id_direccion:integer'
