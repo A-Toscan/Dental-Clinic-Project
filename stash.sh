@@ -4,7 +4,7 @@
 sequelize db:create
 
 # crear modelo Nacionalidad
-sequelize model:generate --name Nacionalidad --attributes 'nombre_nacion:string'
+sequelize model:generate --name roles --attributes 'role_name:string'
 
 # crear modelo Direccion
 sequelize model:generate --name Direccion --attributes 'calle:string,numero:integer'
