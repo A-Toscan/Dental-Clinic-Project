@@ -19,11 +19,11 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  Patientes.init({
+  Patients.init({
     id_users: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Patients',
   });
-  return Patientes;
+  return Patients;
 };

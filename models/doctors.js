@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       
     }
   }
-    
   Doctors.init({
     id_users: DataTypes.INTEGER
   }, {

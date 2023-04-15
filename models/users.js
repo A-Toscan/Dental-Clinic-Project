@@ -1,9 +1,7 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Usuario extends Model {
+  class Users extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -14,28 +12,53 @@ module.exports = (sequelize, DataTypes) => {
       Users.belongsTo(models.roles, {
         foreignKey: "id_roles",
       });
+
       Users.hasMany(models.Doctor, {
         foreignKey: "id_users",
       });
+
       Users.hasMany(models.Patients, {
+        
         foreignKey: "id_users",
       });
-    
-  
-
-    
     }
   }
-  Usuario.init({
-    nombre: DataTypes.STRING,
-    apellidos: DataTypes.STRING,
-    id_roles: DataTypes.INTEGER,
-    email: DataTypes.STRING,
-    telefono: DataTypes.INTEGER,
-    password: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Usuario',
-  });
-  return Usuario;
+  Users.init(
+    {
+      nombre: {
+        type: DataTypes.STRING,
+        validate: {
+          isAlpha: true,
+          min: 3,
+        },
+      },
+      apellidos: {
+        type: DataTypes.STRING,
+        validate: {
+          isAlpha: true,
+          min: 3,
+        },
+      },
+      email: {
+        type: DataTypes.STRING,
+        validate: {
+          isAlphanumeric: true,
+          isEmail: true,
+        },
+      },
+      id_roles: { type: DataTypes.INTEGER },
+      phone: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isNumeric: true,
+        },
+      },
+      password: { type: DataTypes.STRING, validate: { isAlphanumeric: true } },
+    },
+    {
+      sequelize,
+      modelName: "Users",
+    }
+  );
+  return Users;
 };
