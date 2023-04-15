@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Doctors', {
+    await queryInterface.createTable('doctors', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -10,7 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_users: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "users",
+          key: "id"
+        }
       },
       createdAt: {
         allowNull: false,
