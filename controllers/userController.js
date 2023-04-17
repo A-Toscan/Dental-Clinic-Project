@@ -31,11 +31,11 @@ userController.getProfile = async (req, res) => {
 userController.updateProfile = async (req, res) => {
     try {
         const userId = req.userId;
-        const name = req.body.name;
-        const surname = req.body.surname;
-        const phone = req.body.phone;
+        const nombre = req.body.nombre;
+        const apellidos = req.body.apellidos;
+        const telefono = req.body.telefono;
         const email = req.body.email;
-        const updateProfile = await User.update({ name: name, surname: surname, phone: phone, email: email }, { where: { id: userId } })
+        const updateProfile = await User.update({ nombre: nombre, apellidos: apellidos, telefono: telefono, email: email }, { where: { id: userId } })
 
         return res.json(
             {
