@@ -13,12 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id_roles",
       });
 
-      Users.hasMany(models.Doctor, {
+      Users.hasOne(models.Doctor, {
         foreignKey: "id_users",
       });
 
-      Users.hasMany(models.Patients, {
-        
+      Users.hasOne(models.Patients, {
         foreignKey: "id_users",
       });
     }
@@ -58,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "User",
-      tableName: "users"
+      tableName: "users",
     }
   );
   return Users;
