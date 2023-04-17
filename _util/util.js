@@ -1,12 +1,14 @@
-const sendSuccsessResponse = (res, code, data) => res.status(code).json(data);
-const sendErrorResponse = (res, code, message, error = null) => {
-   res.status(code).json({
-      status: "error",
-      message,
-      error: error?.toString(),
-   });
+const getPagesFromCountLimit = (count, limit) => Math.round(count / limit);
+const normalizePage = (page, max) => {
+   page = +page || 1;
+
+   if (page < 1) page = 1;
+   else if (page > max) page = max;
+
+   return page;
 };
+
 module.exports = {
-   sendSuccsessResponse,
-   sendErrorResponse,
+   getPagesFromCountLimit,
+   normalizePage,
 };

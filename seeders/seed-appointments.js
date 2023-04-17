@@ -1,6 +1,5 @@
 'use strict';
 const { Op } = require("sequelize");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -15,13 +14,9 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
            },
-          
-         
         ],
-        
      );
   },
-
   async down (queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.

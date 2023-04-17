@@ -1,6 +1,5 @@
 "use strict";
 const { Op } = require("sequelize");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
    async up(queryInterface, Sequelize) {
@@ -17,7 +16,6 @@ module.exports = {
                createdAt: new Date(),
                updatedAt: new Date(),
             },
-          
             {
               nombre: "Dani",
               apellidos: "Molar",
@@ -28,7 +26,6 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
            },
-          
            {
             nombre: "Maria",
             apellidos: "Gula",
@@ -119,12 +116,9 @@ module.exports = {
             createdAt: new Date(),
             updatedAt: new Date(),
          },
-          
          ],
-        
       );
    },
-
    async down(queryInterface, Sequelize) {
       await queryInterface.bulkDelete("users", {
         //  [Op.or]: [

@@ -1,4 +1,5 @@
 const sendSuccsessResponse = (res, code, data) => res.status(code).json(data);
+
 const sendErrorResponse = (res, code, message, error = null) => {
    res.status(code).json({
       status: "error",
@@ -6,6 +7,7 @@ const sendErrorResponse = (res, code, message, error = null) => {
       error: error?.toString(),
    });
 };
+
 module.exports = {
    sendSuccsessResponse,
    sendErrorResponse,
