@@ -44,7 +44,8 @@ Appointment creation.
 Modification of appointments.
 Cancellation of appointments.
 
-
+## Diagrama BD
+!['imagen-db'](./_img/db.png)
 
 ## Stack
 Technoclogy used:
