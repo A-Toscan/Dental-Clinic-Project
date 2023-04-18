@@ -46,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       id_roles: { type: DataTypes.INTEGER },
-      phone: {
+      telefono: {
         type: DataTypes.INTEGER,
         validate: {
           isNumeric: true,

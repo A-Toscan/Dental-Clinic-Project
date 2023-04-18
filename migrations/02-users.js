@@ -26,7 +26,7 @@ module.exports = {
           key: "id"
         }       
       },
-      phone: {
+      telefono: {
         type: Sequelize.INTEGER
       },
       password: {
