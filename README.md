@@ -65,8 +65,6 @@ Technoclogy used:
  </div>
 
 
-## Diagrama DB
-!['imagen-db'](./_images/db.png)
 
 ## Instalation on local
 1. Start the repository
