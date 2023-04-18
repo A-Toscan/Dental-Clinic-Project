@@ -127,7 +127,7 @@ link to documentation of external libraries
 ``` js
  const developer = "datata";
 
- console.log("Desarrollado por: " + datata);
+ console.log("Desarrollado por: " Antonio Toscano, Luis Guerrero Roquett);
 ```  
 
 
