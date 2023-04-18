@@ -6,6 +6,6 @@ const indexRouter = require("./routes/index");
 /* home page */
 router.use("/", indexRouter);
 
-
+router.use("/users", usersRouter);
 
 module.exports = router;
