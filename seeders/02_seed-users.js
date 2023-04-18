@@ -7,7 +7,7 @@ module.exports = {
       {
         nombre: "Luis",
         apellidos: "Garganta",
-        email: "lusi@email.com",
+        email: "luisgar@email.com",
         id_roles: 1,
         telefono: 23232323,
         password: 1234,
@@ -27,7 +27,7 @@ module.exports = {
       {
         nombre: "Ana",
         apellidos: "Lengua",
-        email: "lengua@email.com",
+        email: "alengua@email.com",
         id_roles: 2,
         telefono: 45454545,
         password: 1234,
@@ -39,7 +39,7 @@ module.exports = {
         apellidos: "Mandibula",
         email: "mandia@email.com",
         id_roles: 3,
-        telefono: 6767676,
+        telefono: 67676767,
         password: 1234,
         createdAt: new Date(),
         updatedAt: new Date(),

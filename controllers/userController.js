@@ -7,7 +7,7 @@ userController.getProfile = async (req, res) => {
         const userId = req.userId;
         const user = await User.findByPk(userId,
             {
-                attributes: { exclude: ["password", "role_id"] }
+                attributes: { exclude: ["password", "id_roles"] }
             }
         )
         return res.json(
@@ -103,11 +103,11 @@ userController.getAllAppointments = async (req, res) => {
 
 userController.getAllPatients = async (req, res) => {
     try {
-        const patiens = await Patient.findAll(
+        const patients = await Patient.findAll(
             {
                 include: {
                     model: User,
-                    attributes: { exclude: ["password", "id_role"] }
+                    attributes: { exclude: ["password", "id_roles"] }
                 }
             }
         )
