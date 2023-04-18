@@ -26,17 +26,17 @@ router.get(
     isAdmin,
     userController.getAllDoctors
   );
-router.get(
-  "/appointments/checkall",
-  verifyToken,
-  isPatient,
-  userController.getAppointmentsByPatient
-);
-router.get(
-  "/appointments/checkall/doctor",
-  verifyToken,
-  isDoctor,
-  userController.getAllAppointmentsByDoctor
-);
+// router.get(
+//   "/appointments/checkall",
+//   verifyToken,
+//   isPatient,
+//   userController.getAppointmentsByPatient
+// );
+// router.get(
+//   "/appointments/checkall/doctor",
+//   verifyToken,
+//   isDoctor,
+//   userController.getAllAppointmentsByDoctor
+// );
 
 module.exports = router;

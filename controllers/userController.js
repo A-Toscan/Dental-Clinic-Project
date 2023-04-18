@@ -129,6 +129,34 @@ userController.getAllPatients = async (req, res) => {
 
     }
 }
+userController.getAllDoctors = async (req, res) => {
+    try {
+        const patients = await Patient.findAll(
+            {
+                include: {
+                    model: User,
+                    attributes: { exclude: ["password", "id_roles"] }
+                }
+            }
+        )
+        return res.json(
+            {
+                success: true,
+                message: "Here are all the doctors",
+                data: patients
+            }
+        )
+    } catch (error) {
+        return res.status(500).json(
+            {
+                success: false,
+                message: "something went wrong",
+                error: error.message
+            }
+        );
+
+    }
+}
 
 
 module.exports = userController;
