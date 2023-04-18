@@ -28,7 +28,7 @@ appointments, create, modify and cancel them.
 There will also be a user area with your personal data, which only you will be able to see.
 only he will be able to see himself.
 In addition, dentists must be able to register as professionals,
-login and logout and see all appointments and registered clients.
+login and logout and see all appointments and registered patients.
 
 
 

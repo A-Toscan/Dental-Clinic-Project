@@ -1,5 +1,5 @@
 const authController = {};
-const { User, Client } = require('../models');
+const { User, Patient } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -23,7 +23,7 @@ authController.register = async (req, res) => {
                 role_id: 2
             }
         )
-        const newClient = await Client.create({
+        const newPatient = await Patient.create({
             user_id: newUser.id
         })
 
@@ -31,7 +31,7 @@ authController.register = async (req, res) => {
             {
                 success: true,
                 message: "User created succesfully",
-                data: { newUser, newClient }
+                data: { newUser, newPatient }
             });
     } catch (error) {
 

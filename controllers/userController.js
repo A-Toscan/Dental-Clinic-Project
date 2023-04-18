@@ -1,4 +1,4 @@
-const { User, Appointment, Client } = require("../models");
+const { User, Appointment, Patient } = require("../models");
 
 const userController = {};
 
@@ -33,9 +33,9 @@ userController.updateProfile = async (req, res) => {
         const userId = req.userId;
         const nombre = req.body.nombre;
         const apellidos = req.body.apellidos;
-        const telefono = req.body.telefono;
         const email = req.body.email;
-        const updateProfile = await User.update({ nombre: nombre, apellidos: apellidos, telefono: telefono, email: email }, { where: { id: userId } })
+        const telefono = req.body.telefono;
+        const updateProfile = await User.update({ nombre: nombre, apellidos: apellidos, email: email, telefono: telefono }, { where: { id: userId } })
 
         return res.json(
             {
@@ -59,7 +59,7 @@ userController.updateProfile = async (req, res) => {
 
 userController.getAppointmentsByUser = async (req, res) => {
     try {
-        const appointments = await Appointment.findAll({ where: { client_id: req.clientId } });
+        const appointments = await Appointment.findAll({ where: { id_patient: req.patientId } });
         return res.json(
             {
                 success: true,
@@ -101,21 +101,21 @@ userController.getAllAppointments = async (req, res) => {
     }
 }
 
-userController.getAllClients = async (req, res) => {
+userController.getAllPatients = async (req, res) => {
     try {
-        const clients = await Client.findAll(
+        const patiens = await Patient.findAll(
             {
                 include: {
                     model: User,
-                    attributes: { exclude: ["password", "role_id"] }
+                    attributes: { exclude: ["password", "id_role"] }
                 }
             }
         )
         return res.json(
             {
                 success: true,
-                message: "Here are all the clients",
-                data: clients
+                message: "Here are all the patients",
+                data: patients
             }
         )
     } catch (error) {
