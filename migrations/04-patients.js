@@ -12,7 +12,7 @@ module.exports = {
       id_users: {
         type: Sequelize.INTEGER,
         references:{
-          model: "users",
+          model: "User",
           key: "id"
         }
       },
@@ -27,6 +27,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Patients');
+    await queryInterface.dropTable('patients');
   }
 };
