@@ -40,9 +40,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       email: {
         type: DataTypes.STRING,
+        allowNull: false,
+        unique:true,
         validate: {
-          isAlphanumeric: true,
           isEmail: true,
+          isLowercase: true,
         },
       },
       id_roles: { type: DataTypes.INTEGER },
@@ -55,7 +57,11 @@ module.exports = (sequelize, DataTypes) => {
 
       
       
-      password: { type: DataTypes.STRING, validate: { isAlphanumeric: true } },
+      password: { type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          min: 8
+        }, },
     },
     {
       sequelize,

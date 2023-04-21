@@ -2,6 +2,7 @@ const authController = {};
 const { User, Patient } = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { generateToken } = require("../_util/token");
 
 authController.register = async (req, res) => {
   try {
@@ -39,6 +40,40 @@ authController.register = async (req, res) => {
   }
 };
 
+// register doctor
+
+// authController.registerDoctor = async (req, res) => {
+//   const { nombre, email, password, apellidos } = req.body;
+
+//   if (password.length < 8) {
+//     return sendErrorResponse(
+//       res,
+//       400,
+//       "Password must be larger than 8 characters"
+//     );
+//   }
+
+//   const encryptedPassword = hash(password);
+
+//   const newUser = {
+//     nombre,
+//     apellidos,
+//     email,
+//     password: encryptedPassword,
+//     id_rol: 2,
+//   };
+
+//   try {
+//     let newDoctor = await Users.create(newUser);
+//      await Doctors.create({ id_usuario: newDoctor.id });
+//     sendSuccsessResponse(res, 201, "Doctor registered succsessfully");
+//   } catch (error) {
+//     sendErrorResponse(res, 500, "Error creating doctor", error);
+//   }
+// };
+
+
+//login de user
 authController.login = async (req, res) => {
   try {
     const { email, password } = req.body;
