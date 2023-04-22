@@ -33,6 +33,7 @@ appointmentController.createAppointment = async (req, res) => {
     }
 }
 
+// Delete appointment
 appointmentController.deleteAppointment = async (req, res) => {
     try {
         const appointmentId = req.params.id;
@@ -57,6 +58,7 @@ appointmentController.deleteAppointment = async (req, res) => {
     }
 }
 
+// Update appointment
 appointmentController.updateAppointment = async (req, res) => {
     try {
         const appointmentId = req.params.id;
