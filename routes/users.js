@@ -20,12 +20,12 @@ router.get(
   isAdmin,
   userController.getAllPatients
 );
-// router.get(
-//     "/profile/checkalldoctors",
-//     verifyToken,
-//     isAdmin,
-//     userController.getAllDoctors
-//   );
+router.get(
+    "/profile/checkalldoctors",
+    verifyToken,
+    isAdmin,
+    userController.getAllDoctors
+  );
 // router.get(
 //   "/appointments/checkall",
 //   verifyToken,

@@ -1,5 +1,4 @@
 const { getTokenFromHeader, decodedToken } = require("../_util/token");
-
 const { sendErrorResponse } = require("../_util/sendResponse");
 
 const verifyToken = (req, res, next) => {
@@ -11,7 +10,7 @@ const verifyToken = (req, res, next) => {
 
   try {
     const decoded = decodedToken(token);
-
+    console.log(decoded);
     req.user_id = decoded.user_id;
     req.user_role = decoded.user_role;
 
