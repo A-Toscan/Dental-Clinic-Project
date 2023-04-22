@@ -100,11 +100,16 @@ authController.login = async (req, res) => {
       return res.send("Wrong email");
     }
 
-    console.log(user);
-    const isMatch = bcrypt.compareSync(password, user.password);
-    if (!isMatch) {
-      return res.send("Wrong Credentials");
+    const isValidPassword = compareHash(password, user.password);
+    if (!isValidPassword) {
+      return sendErrorResponse(res, 401, "Incorrect password");
     }
+
+
+    // const isMatch = bcrypt.compareSync(password, user.password);
+    // if (!isMatch) {
+    //   return res.send("Wrong Credentials");
+    // }
 
     //Token propio para autenticar el usuario
 //     const token = jwt.sign(

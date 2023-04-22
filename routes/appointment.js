@@ -8,29 +8,25 @@ const isAdmin = require("../middlewares/isAdmin");
 
 // Create appointment
 router.post(
-  "/createAppointment",
+  "/createappointment",
   verifyToken,
   appointmentController.createAppointment
 );
 // Delete appointment
 router.delete(
-  "/deleteAppointment/:id",
+  "/deleteappointment/:id",
   verifyToken,
   appointmentController.deleteAppointment
 );
 // Modify appointment
 router.put(
-  "/updateAppointment/:id",
+  "/updateappointment/:id",
   verifyToken,
   appointmentController.updateAppointment
 );
 // See appointment as Patient
 router.get("/appointment", verifyToken, appointmentController.getAppointment);
 // See appointment as Doctor
-router.get(
-  "/appointment",
-  verifyToken,
-  appointmentController.getDoctorAppointment
-);
+router.get("/appointment/doctor", verifyToken, appointmentController.getDoctorAppointment);
 
 module.exports = router;

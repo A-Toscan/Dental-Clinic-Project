@@ -14,7 +14,7 @@ router.use("/auth", authRouter);
 /* users */
 router.use("/users", userRouter)
 /* appointment */
- router.use("/appointment", appointmentRouter)
+ router.use("/appointments", appointmentRouter)
 
 
 module.exports = router;

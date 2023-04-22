@@ -55,7 +55,7 @@ userController.updateProfile = async (req, res) => {
 userController.getAppointmentsByUser = async (req, res) => {
   try {
     const appointments = await Appointment.findAll({
-      where: { id_patient: req.patientId },
+      where: { id_patients: req.patientId },
     });
     return res.json({
       success: true,
