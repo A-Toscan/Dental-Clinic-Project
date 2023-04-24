@@ -74,7 +74,7 @@ authController.registerDoctor = async (req, res) => {
 
   try {
     let newDoctor = await Users.create(newUser);
-     await Doctors.create({ id_usuario: newDoctor.id });
+     await Doctors.create({ id_users: newDoctor.id });
     sendSuccsessResponse(res, 201, "Doctor registered succsessfully");
   } catch (error) {
     sendErrorResponse(res, 500, "Error creating doctor", error);

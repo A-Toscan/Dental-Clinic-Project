@@ -47,6 +47,14 @@ Cancellation of appointments.
 ## Diagrama BD
 !['imagen-db'](./_img/db.png)
 
+Postman
+!['imagen-db'](./_img/postman.jpg)
+
+Creation of User
+!['imagen-db'](./_img/user_register.JPG)
+
+Creation of Appointment
+!['imagen-db'](./_img/create_appoinment.JPG)
 ## Stack
 Technoclogy used:
 <div align="center">
