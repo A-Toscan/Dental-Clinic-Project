@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Appointment extends Model {
     /**
@@ -19,23 +17,25 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  Appointment.init({
-    id_patients: DataTypes.INTEGER,
-    id_doctors: DataTypes.INTEGER,
-    time:{
-      type: DataTypes.TIME,
-    }, 
-    date:{
+  Appointment.init(
+    {
+      id_patients: DataTypes.INTEGER,
+      id_doctors: DataTypes.INTEGER,
+      time: {
+        type: DataTypes.TIME,
+      },
+      date: {
         type: DataTypes.DATE,
         validate: {
           isDate: true,
         },
-      }
-     
-  }, {
-    sequelize,
-    modelName: 'Appointment',
-    tableName: 'appointments'
-  });
+      },
+    },
+    {
+      sequelize,
+      modelName: "Appointment",
+      tableName: "appointments",
+    }
+  );
   return Appointment;
 };

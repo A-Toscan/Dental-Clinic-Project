@@ -9,25 +9,25 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Role.hasMany(models.User, { 
-         as: "Roles",
-        foreignKey: "id_roles" }); // ForeignKey the Users
+      Role.hasMany(models.User, {
+        as: "Roles",
+        foreignKey: "id_roles",
+      }); // ForeignKey the Users
     }
   }
   Role.init(
     {
-      role_name:{type: DataTypes.STRING,
-      validate:{
-        isAlpha: true,
-        
-      }} 
+      role_name: {
+        type: DataTypes.STRING,
+        validate: {
+          isAlpha: true,
+        },
+      },
     },
     {
       sequelize,
       modelName: "Role",
-      tableName: "roles"
-
-
+      tableName: "roles",
     }
   );
   return Role;

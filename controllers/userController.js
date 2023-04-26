@@ -25,16 +25,15 @@ userController.updateProfile = async (req, res) => {
   try {
     const userId = req.user_id;
     let newPassword;
-    if (req.body.password){
+    if (req.body.password) {
       newPassword = hash(req.body.password);
-      
     }
-    
+
     const updateProfile = await User.update(
       {
         ...req.body,
         password: newPassword,
-        id_roles: 1
+        id_roles: 1,
       },
       { where: { id: userId } }
     );
