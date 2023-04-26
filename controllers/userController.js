@@ -55,7 +55,7 @@ userController.updateProfile = async (req, res) => {
 userController.getAppointmentsByUser = async (req, res) => {
   try {
     const appointments = await Appointment.findAll({
-      where: { id_patients: req.patientId },
+      where: { id_patient: req.patientId },
     });
     return res.json({
       success: true,
@@ -91,6 +91,9 @@ userController.getAllAppointments = async (req, res) => {
 userController.getAllPatients = async (req, res) => {
   try {
     const patients = await Patient.findAll({
+      attributes: {
+        exclude: ["createdAt", "updatedAt"],
+      },
       include: {
         model: User,
         attributes: { exclude: ["password", "id_roles"] },
