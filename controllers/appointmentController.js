@@ -1,16 +1,17 @@
 const appointmentController = {};
-const { Appointment } = require('../models');
+const { Appointment, User, Patient } = require('../models');
 
 
 appointmentController.createAppointment = async (req, res) => {
     try {
-        const { date, time, id_doctors, id_patients } = req.body;
+        const patient = await Patient.findOne({where:{id_users: req.user_id}})
+        const { date, time, id_doctors } = req.body;
         const newAppointment = await Appointment.create(
             {
                 date: date,
                 time: time,
                 id_doctors: id_doctors,
-                id_patients: req.patientId
+                id_patients: patient.id
             }
         )
 
@@ -36,8 +37,9 @@ appointmentController.createAppointment = async (req, res) => {
 // Delete appointment
 appointmentController.deleteAppointment = async (req, res) => {
     try {
+        const patient = await Patient.findOne({where:{id_users: req.user_id}})
         const appointmentId = req.params.id;
-        const deleteAppointment = await Appointment.destroy({ where: { id: appointmentId, id_patient: req.patientId } })
+        const deleteAppointment = await Appointment.destroy({ where: { id: appointmentId, id_patients: patient.id } })
 
         return res.json(
             {
@@ -61,10 +63,11 @@ appointmentController.deleteAppointment = async (req, res) => {
 // Update appointment
 appointmentController.updateAppointment = async (req, res) => {
     try {
+        const patient = await Patient.findOne({where:{id_users: req.user_id}})
         const appointmentId = req.params.id;
         const date = req.body.date;
         const time = req.body.time;
-        const updateAppointment = await Appointment.update({ date: date, time: time, }, { where: { id: appointmentId, id_patient: req.patientId } })
+        const updateAppointment = await Appointment.update({ date: date, time: time, }, { where: { id: appointmentId, id_patients: patient.id } })
 
         return res.json(
             {

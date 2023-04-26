@@ -9,7 +9,7 @@ const {
 
 userController.getProfile = async (req, res) => {
   try {
-    const userId = req.userId;
+    const userId = req.user_id;
     const user = await User.findByPk(userId, {
       attributes: {
         exclude: ["id", "password", "id_roles", "createdAt", "updatedAt"],
@@ -23,7 +23,7 @@ userController.getProfile = async (req, res) => {
 
 userController.updateProfile = async (req, res) => {
   try {
-    const userId = req.userId;
+    const userId = req.user_id;
     const nombre = req.body.nombre;
     const apellidos = req.body.apellidos;
     const email = req.body.email;
@@ -55,7 +55,7 @@ userController.updateProfile = async (req, res) => {
 userController.getAppointmentsByUser = async (req, res) => {
   try {
     const appointments = await Appointment.findAll({
-      where: { id_patient: req.patientId },
+      where: { id_patients: req.patientId },
     });
     return res.json({
       success: true,
