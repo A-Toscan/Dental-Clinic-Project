@@ -1,7 +1,9 @@
 const appointmentController = {};
 const { Appointment, User, Patient } = require('../models');
-
-
+const {
+    sendSuccsessResponse,
+    sendErrorResponse,
+  } = require("../_util/sendResponse");
 appointmentController.createAppointment = async (req, res) => {
     try {
         const patient = await Patient.findOne({where:{id_users: req.user_id}})
