@@ -1,11 +1,13 @@
 const { User, Appointment, Patient, Doctor } = require("../models");
 
-const userController = {};
+
 const {
   sendSuccsessResponse,
   sendErrorResponse,
 } = require("../_util/sendResponse");
 const { hash } = require("../_util/hash");
+const userController = {};
+
 
 userController.getProfile = async (req, res) => {
   try {
@@ -20,6 +22,8 @@ userController.getProfile = async (req, res) => {
     return sendErrorResponse(res, 500, "Error retreiving user data", error);
   }
 };
+
+
 // Update Profile
 userController.updateProfile = async (req, res) => {
   try {
