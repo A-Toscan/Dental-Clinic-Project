@@ -69,6 +69,7 @@ appointmentController.updateAppointment = async (req, res) => {
         const time = req.body.time;
         const updateAppointment = await Appointment.update({ date: date, time: time, }, { where: { id: appointmentId, id_patients: patient.id } })
 
+    
         return res.json(
             {
                 success: true,
