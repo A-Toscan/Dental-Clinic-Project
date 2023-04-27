@@ -3,15 +3,15 @@
 <details>
   <summary>Content 📝</summary>
   <ol>
-    <li><a href="#objetivo">About</a></li>
-    <li><a href="#sobre-el-proyecto">Prerequsitis</a></li>
-    <li><a href="#deploy-">Installation</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#prerequitis">Prerequsitis</a></li>
+    <li><a href="#instalation">Instalation</a></li>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#endpoints">End Points</a></li>
-    <li><a href="#licencia">License</a></li>
-    <li><a href="#webgrafia">Webgrafia</a></li>
-    <li><a href="#desarrollo">Development</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#endpoints">Endpoints</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#webgraphy">Webgraphy</a></li>
+    <li><a href="#development">Development</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -43,7 +43,9 @@ Cancellation of appointments.
 
 !['imagen-db'](./_img/db.png)
 
-## Instalation on local
+## Instalation 
+
+Instalation on local
 
 1. Start the repository
 2. `$ npm install`
@@ -53,7 +55,7 @@ Cancellation of appointments.
 6. `$ npm run dev`
 7. `$ npm run db-reset`
 
-## End Points
+## Endpoints
 
 <details>
 <summary>Endpoints</summary>
@@ -121,7 +123,7 @@ Technology used:
 
 ## License
 
-This project is under licence from "Antonio Toscano".
+This project is under licence of "Antonio Toscano".
 
 ## Webgraphy:
 
