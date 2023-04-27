@@ -3,24 +3,20 @@
 <details>
   <summary>Content 📝</summary>
   <ol>
-    <li><a href="#objetivo">Objetivo</a></li>
-    <li><a href="#sobre-el-proyecto">Sobre el proyecto</a></li>
-    <li><a href="#deploy-🚀">Deploy</a></li>
+    <li><a href="#objetivo">About</a></li>
+    <li><a href="#sobre-el-proyecto">Prerequsitis</a></li>
+    <li><a href="#deploy-">Installation</a></li>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#diagrama-bd">Diagrama</a></li>
-    <li><a href="#instalación-en-local">Instalación</a></li>
-    <li><a href="#endpoints">Endpoints</a></li>
-    <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li>
-    <li><a href="#contribuciones">Contribuciones</a></li>
-    <li><a href="#licencia">Licencia</a></li>
+    <li><a href="#endpoints">End Points</a></li>
+    <li><a href="#licencia">License</a></li>
     <li><a href="#webgrafia">Webgrafia</a></li>
-    <li><a href="#desarrollo">Desarrollo</a></li>
-    <li><a href="#agradecimientos">Agradecimientos</a></li>
+    <li><a href="#desarrollo">Development</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ol>
 </details>
 
 ## About
+
 In order to do so, the customer must be able to register in the application, login & logout and access his customer area, all visually from within the application.
 login & logout and access their customer area, all visually from the browser.
 browser. In their customer area they should be able to see a list of future appointments, create, modify and cancel them.
@@ -30,9 +26,8 @@ only he will be able to see himself.
 In addition, dentists must be able to register as professionals,
 login and logout and see all appointments and registered patients.
 
-
-
 ## Prerequitis
+
 Taking into account the requirements, we concluded that this would be
 the minimum number of suitable endpoints:
 User registration.
@@ -45,9 +40,23 @@ Modification of appointments.
 Cancellation of appointments.
 
 ## Diagrama BD
+
 !['imagen-db'](./_img/db.png)
 
+## Instalation on local
+
+1. Start the repository
+2. `$ npm install`
+3. `$ npm nodemon `
+4. `$ Sequelize: db:migration`
+5. ` $ Sequelize: de:seed`
+6. `$ npm run dev`
+7. `$ npm run db-reset`
+
 ## End Points
+
+<details>
+<summary>Endpoints</summary>
 
 User Register
 !['imagen-db'](./_img/user_register.JPG)
@@ -84,8 +93,13 @@ See all appointment patients
 
 See all appointment doctors
 !['imagen-db'](./_img/see_appointment_doctors.JPG)
+
+</details>
+
 ## Stack
+
 Technoclogy used:
+
 <div align="center">
 <a href="https://sequelize.org/">
     <img src= "https://img.shields.io/badge/sequelize-323330?style=for-the-badge&logo=sequelize&logoColor=white"/>
@@ -105,57 +119,12 @@ Technoclogy used:
 
  </div>
 
-
-
-## Instalation on local
-1. Start the repository
-2. ` $ npm install `
-3. Connect our repository to the database
-4. ``` $ Sequelize: db:migration ``` 
-5. ``` $ Sequelize: de:seed``` 
-6. ``` $ npm run dev ``` 
-7. ...
-
-## Endpoints
-<details>
-<summary>Endpoints</summary>
-
-- AUTH
-    - REGISTER
-
-            POST http://localhost:3000/auth/register
-        body:
-        ``` js
-            {
-                "user": "David",
-                "email": "david@david.com",
-                "password": "princes"
-            }
-        ```
-
-    - LOGIN
-
-            POST http://localhost:3000/auth/login  
-        body:
-        ``` js
-            {
-                "user": "David",
-                "email": "david@david.com",
-                "password": "princes"
-            }
-        ```
-- RUTINAS
-    - RECUPERAR RUTINAS  
-
-            GET http://localhost:3000/api/rutina
-
-    - ...
-</details>
-
 ## License
+
 This project is under licence from "Antonio Toscano".
 
 ## Webgraphy:
+
 To achieve my goal I have collected information from:
 
 link to repositories
@@ -163,16 +132,16 @@ link to documentation of external libraries
 
 ## Development:
 
-``` js
- const developer = "datata";
+```js
+ const developer = "Backend";
 
  console.log("Desarrollado por: " Antonio Toscano, Luis Guerrero Roquett);
-```  
-
-
+```
 
 ## Contact
-<a href="https://github.com/A-Toscan" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a> 
+
+<a href="https://github.com/A-Toscan" target="_blank"><img src="https://img.shields.io/badge/github-24292F?style=for-the-badge&logo=github&logoColor=green" target="_blank"></a>
 <a href = "mailto:eltoscan@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-<a href="https://www.linkedin.com/in/antonio-toscano-hd/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href="https://www.linkedin.com/in/antonio-toscano-hd/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+
 </p>
