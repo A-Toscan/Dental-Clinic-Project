@@ -47,14 +47,43 @@ Cancellation of appointments.
 ## Diagrama BD
 !['imagen-db'](./_img/db.png)
 
-Postman
-!['imagen-db'](./_img/postman.jpg)
+## End Points
 
-Creation of User
+User Register
 !['imagen-db'](./_img/user_register.JPG)
 
-Creation of Appointment
+Login
+!['imagen-db'](./_img/login.JPG)
+
+User Profile
+!['imagen-db'](./_img/user_profile.JPG)
+
+Modify User
+!['imagen-db'](./_img/modify_user.JPG)
+
+Appointment creation
 !['imagen-db'](./_img/create_appoinment.JPG)
+
+Appointment modify
+!['imagen-db'](./_img/modify_appointment.JPG)
+
+Appointment delete
+!['imagen-db'](./_img/delete_appointment.JPG)
+
+Doctor register
+!['imagen-db'](./_img/doctor_register.JPG)
+
+See all Doctors
+!['imagen-db'](./_img/see_all_doctors.JPG)
+
+See all Patients
+!['imagen-db'](./_img/see_all_patients.JPG)
+
+See all appointment patients
+!['imagen-db'](./_img/see_appointment_patients.JPG)
+
+See all appointment doctors
+!['imagen-db'](./_img/see_appointment_doctors.JPG)
 ## Stack
 Technoclogy used:
 <div align="center">
