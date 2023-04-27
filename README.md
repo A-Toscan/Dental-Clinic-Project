@@ -98,7 +98,7 @@ See all appointment doctors
 
 ## Stack
 
-Technoclogy used:
+Technology used:
 
 <div align="center">
 <a href="https://sequelize.org/">
